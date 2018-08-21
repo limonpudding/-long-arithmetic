@@ -1,5 +1,6 @@
 package com;
 
+import com.sun.xml.internal.ws.api.server.InstanceResolverAnnotation;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+
+import javax.annotation.Resource;
 
 @Configuration
 public class BeanConfig {

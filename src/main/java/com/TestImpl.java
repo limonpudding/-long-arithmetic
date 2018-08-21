@@ -12,11 +12,11 @@ public class TestImpl implements TestInterface {
 
     private String someText;
 
-
-    @Autowired
-    public void setSomeText(String someText) {
-        this.someText = someText;
-    }
+//
+//    @Autowired
+//    public void setSomeText(String someText) {
+//        this.someText = someText;
+//    }
 
     public TestImpl(){}
 

@@ -1,10 +1,13 @@
 package com;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
+    @Qualifier("test")
+    String someText = "lol";
     public static void main(String[] args) {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(BeanConfig.class);
@@ -13,7 +16,7 @@ public class App {
         System.out.println(test.count());
         System.out.println(test.count());
         System.out.println(test.getSomeText());
-        TestInterface test2 = context.getBean("getTest2", TestInterface.class);
+        TestInterface test2 = (TestInterface)context.getBean("getTest2");
         System.out.println(test2.count());
         System.out.println(test2.count());
         NameInterface name = context.getBean(NameInterface.class);
