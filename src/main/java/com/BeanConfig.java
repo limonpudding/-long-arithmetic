@@ -13,16 +13,22 @@ public class BeanConfig {
 
     @Bean(initMethod = "initTest", destroyMethod = "destroyTest")
     @Scope("prototype")
-    @Qualifier("testImpl")
     public TestInterface getTest(){
         System.out.println("Создание Test");
         return new TestImpl();
     }
 
+
+    @Bean(initMethod = "initTest", destroyMethod = "destroyTest")
+    public TestInterface getTest2(){
+        System.out.println("Создание Test");
+        return new TestImpl2();
+    }
+
     @Bean
-    @Autowired
     //TODO Есть несколько реализаций TestInterface. Как сделать так, чтобы подтянулась нужная нам реализация?
-    public NameInterface getName(TestInterface test){
+    @Autowired
+    public NameInterface getName(@Qualifier("getTest") TestInterface test){
 
         NameInterface name = new NameImpl();
         System.out.println("Создание Name");
