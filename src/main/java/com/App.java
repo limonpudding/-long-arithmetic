@@ -7,6 +7,7 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(BeanConfig.class);
+
         TestInterface test = context.getBean(TestInterface.class);
         System.out.println(test.count());
         System.out.println(test.count());
