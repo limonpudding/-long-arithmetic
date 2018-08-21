@@ -8,7 +8,7 @@ public class BeanConfig {
 
 
 
-    @Bean(initMethod = "initTest")
+    @Bean(initMethod = "initTest", destroyMethod = "destroyTest")
     public TestInterface getTest(){
         System.out.println("Создание Test");
         return new TestImpl();

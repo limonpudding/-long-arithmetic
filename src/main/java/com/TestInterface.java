@@ -4,4 +4,6 @@ public interface TestInterface {
     int count();
 
     void initTest();
+
+    void destroyTest();
 }

@@ -18,5 +18,6 @@ public class App {
         System.out.println(name.getName());
         System.out.println(name.getName());
         System.out.println(name.getName());
+        ((AnnotationConfigApplicationContext) context).registerShutdownHook();
     }
 }

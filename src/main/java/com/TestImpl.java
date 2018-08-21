@@ -12,4 +12,8 @@ public class TestImpl implements TestInterface {
     public void initTest() {
         System.out.println("Бин теста создан");
     }
+
+    public void destroyTest() {
+        System.out.println("Вызван метод destroyTest");
+    }
 }
