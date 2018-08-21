@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class BeanConfig {
 
-
+    //@Autowired TestInterface getTest
 
     @Bean(initMethod = "initTest", destroyMethod = "destroyTest")
     @Scope("prototype")
@@ -18,7 +18,7 @@ public class BeanConfig {
         return new TestImpl();
     }
 
-
+    @Autowired
     @Bean(initMethod = "initTest", destroyMethod = "destroyTest")
     public TestInterface getTest2(){
         System.out.println("Создание Test");
