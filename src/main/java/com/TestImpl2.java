@@ -14,7 +14,7 @@ public class TestImpl2 implements TestInterface {
     }
 
     @Autowired
-    public void setSomeText(@Value("kakoito text") String someText) {
+    public void setSomeText(@Value("Я сервайс") String someText) {
         this.someText = someText;
     }
 
