@@ -1,6 +1,9 @@
 package com;
 
 public class TestImpl2 implements TestInterface {
+
+    private String someText;
+
     public int count() {
         return -1;
     }
@@ -11,5 +14,9 @@ public class TestImpl2 implements TestInterface {
 
     public void destroyTest() {
         System.out.println("Вызван метод destroyTest2");
+    }
+
+    public String getSomeText() {
+        return someText;
     }
 }

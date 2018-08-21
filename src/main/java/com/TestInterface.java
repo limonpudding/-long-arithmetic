@@ -7,4 +7,6 @@ public interface TestInterface {
     void initTest();
 
     void destroyTest();
+
+    String getSomeText();
 }

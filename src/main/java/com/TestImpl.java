@@ -2,14 +2,12 @@ package com;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TestImpl implements TestInterface {
     private int number = 0;
 
-    @Autowired
-    @Qualifier("getTest2")
     private TestInterface testInterface;
 
     private String someText;
@@ -20,15 +18,15 @@ public class TestImpl implements TestInterface {
         this.someText = someText;
     }
 
-    TestImpl(){}
+    public TestImpl(){}
 
     @Autowired
     public TestImpl(String someText, int number) {
         this.someText = someText;
         this.number = number;
     }
-
     //TODO придумать пример с Autowired. Объяснить, как оно работает
+
     public int count() {
         return ++number;
     }
@@ -39,5 +37,9 @@ public class TestImpl implements TestInterface {
 
     public void destroyTest() {
         System.out.println("Вызван метод destroyTest");
+    }
+
+    public String getSomeText() {
+        return someText;
     }
 }
