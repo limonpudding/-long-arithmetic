@@ -8,4 +8,8 @@ public class TestImpl implements TestInterface {
     public int count() {
         return ++number;
     }
+
+    public void initTest() {
+        System.out.println("Бин теста создан");
+    }
 }

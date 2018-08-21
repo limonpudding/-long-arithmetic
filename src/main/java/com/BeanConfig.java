@@ -5,7 +5,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanConfig {
-    @Bean
+
+
+
+    @Bean(initMethod = "initTest")
     public TestInterface getTest(){
         System.out.println("Создание Test");
         return new TestImpl();
