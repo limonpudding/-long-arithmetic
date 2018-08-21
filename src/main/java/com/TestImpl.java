@@ -8,17 +8,7 @@ import org.springframework.stereotype.Component;
 public class TestImpl implements TestInterface {
     private int number = 0;
 
-    private TestInterface testInterface;
-
     private String someText;
-
-//
-//    @Autowired
-//    public void setSomeText(String someText) {
-//        this.someText = someText;
-//    }
-
-    public TestImpl(){}
 
     @Autowired
     public TestImpl(String someText, int number) {
