@@ -11,8 +11,9 @@ public class App {
         System.out.println(test.count());
         System.out.println(test.count());
         System.out.println(test.count());
-        System.out.println(test.count());
-        System.out.println(test.count());
+        TestInterface test2 = context.getBean(TestInterface.class);
+        System.out.println(test2.count());
+        System.out.println(test2.count());
         NameInterface name = context.getBean(NameInterface.class);
         System.out.println(name.getName());
         System.out.println(name.getName());

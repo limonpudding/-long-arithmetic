@@ -2,6 +2,7 @@ package com;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class BeanConfig {
@@ -9,6 +10,7 @@ public class BeanConfig {
 
 
     @Bean(initMethod = "initTest", destroyMethod = "destroyTest")
+    @Scope("prototype")
     public TestInterface getTest(){
         System.out.println("Создание Test");
         return new TestImpl();
