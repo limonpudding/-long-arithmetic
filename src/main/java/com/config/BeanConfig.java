@@ -1,5 +1,6 @@
-package com;
+package com.config;
 
+import com.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
@@ -8,19 +9,20 @@ import org.springframework.context.annotation.*;
 @ImportResource({"classpath:spring.xml"})
 public class BeanConfig {
 
-    private TestInterface testInterface;
-
-//    @Bean(name = "getTest", initMethod = "initTest", destroyMethod = "destroyTest")
-//    @Scope("prototype")
-//    public TestInterface getTest(@Value("SomeString") String str, @Value("50") int number) {
-//        System.out.println("Создание Test");
-//        return new TestImpl(str, number);
-//    }
-
     @Bean(name = "getTest2", initMethod = "initTest", destroyMethod = "destroyTest")
     public TestInterface getTest2() {
         System.out.println("Создание Test2");
         return new TestImpl2();
+    }
+
+    @Bean
+    public Animals getCat(@Value("3") int years){
+        return new Cat(years);
+    }
+
+    @Bean
+    public Animals getDog(@Value("5") int years){
+        return new Dog(years);
     }
 
     @Bean

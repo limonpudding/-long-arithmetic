@@ -1,5 +1,6 @@
 package com;
 
+import com.config.BeanConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -22,6 +23,14 @@ public class App {
         System.out.println(name.getName());
         System.out.println(name.getName());
         System.out.println(name.getName());
+        Animals dog = context.getBean(Dog.class);
+        Animals cat = context.getBean(Cat.class);
+        dog.doVoice();
+        dog.grow();
+        dog.howOldAreYou();
+        cat.grow();
+        cat.howOldAreYou();
+        cat.doVoice();
         //((AnnotationConfigApplicationContext) context).registerShutdownHook();
     }
 }
