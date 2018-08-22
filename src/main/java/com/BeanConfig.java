@@ -1,27 +1,21 @@
 package com;
 
-import com.sun.xml.internal.ws.api.server.InstanceResolverAnnotation;
-import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-
-import javax.annotation.Resource;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@ImportResource({"classpath:spring.xml"})
 public class BeanConfig {
 
     private TestInterface testInterface;
 
-    @Bean(name = "getTest", initMethod = "initTest", destroyMethod = "destroyTest")
-    @Scope("prototype")
-    public TestInterface getTest(@Value("SomeString") String str, @Value("50") int number) {
-        System.out.println("Создание Test");
-        return new TestImpl(str, number);
-    }
+//    @Bean(name = "getTest", initMethod = "initTest", destroyMethod = "destroyTest")
+//    @Scope("prototype")
+//    public TestInterface getTest(@Value("SomeString") String str, @Value("50") int number) {
+//        System.out.println("Создание Test");
+//        return new TestImpl(str, number);
+//    }
 
     @Bean(name = "getTest2", initMethod = "initTest", destroyMethod = "destroyTest")
     public TestInterface getTest2() {

@@ -1,12 +1,9 @@
 package com;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
-    @Qualifier("test")
     String someText = "lol";
     public static void main(String[] args) {
         ApplicationContext context =
